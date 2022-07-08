@@ -1,3 +1,4 @@
+
 int cant, tam, newMemoria;
 PImage []memoria = new PImage[13];
 int []columnas = new int[5];
@@ -75,6 +76,11 @@ void draw() {
     text("CLICKEALBUMS", 400, 300);
     image(memoria[12], 500, 0, 300, 280);
     image(memoria[12], 0, 400, 300, 280);
+    textSize(15);
+    noFill();
+    rect(550,480,100,30);
+    fill(0);
+    text("SIGUIENTE",600,492);
   } else if (estado==1) {
     background(relleno);
     textSize(60);
@@ -107,9 +113,8 @@ void draw() {
       }
     }
   }
-
    //Medir si ganaste
-      int imagenesDescubiertasCantidad;
+          int imagenesDescubiertasCantidad;
       imagenesDescubiertasCantidad = 0;
       for (int i = 0; i < 12; i ++) {
         imagenesDescubiertas[i] = false;
@@ -118,28 +123,31 @@ void draw() {
           imagenesDescubiertas[i] = true;
           imagenesDescubiertasCantidad++;
         }
+       
         if (imagenesDescubiertasCantidad == 12) {
-          if (contador<=5*700) {
+           if (contador<=6*700) {
             estado =4;
           }
         }
       }
-
-
   if (estado==4) {
-    background(255, 0, 0);
+    background(255,0,0);
     text("Ganaste!!!", 400, 300);
   } else if (estado==5) {
     background(relleno);
     fill(255, 0, 0);
     text("PERDISTE :(", 400, 300);
     textSize(15);
-    text("SIGUIENTE --> ", 600, 500);
+    noFill();
+    rect(550,480,100,30);
+    fill(0);
+    text("SIGUIENTE",600,492);
   } else if (estado==6) {
     background(relleno);
     image(memoria[12], 600, 0, 300, 280);
     image(memoria[12], 0, 400, 300, 280);
     textFont(creditos);
+    fill(255,0,0);
     text("Créditos", 400, 50);
     textSize(40);
     text("Tecnología Multimedial 1", 400, 180);
@@ -160,11 +168,14 @@ void mousePressed() {
     estado=3;
   } else if (estado==3) {
     imagenes();
-  } else if (estado==3) {
-   
-      
-    }
-  if (estado==4 || estado==5) {
+ 
+  } else if(estado==4){
+  estado=6;
+  }else if(estado==5){
+    estado=6;
+  }
+  
+  if (estado==4 && estado==5) {
     estado=6;
   }
 }
@@ -174,6 +185,8 @@ void keyPressed() {
   if (key==' ') {
     if (estado==6) {
       reiniciar();
-    }
+     }
+  
+    
   }
 }
