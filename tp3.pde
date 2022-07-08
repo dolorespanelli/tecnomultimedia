@@ -102,13 +102,12 @@ void draw() {
         println( contador/700 );
       }
       // condición perder
-      if (contador>=6*700) {
+      if (contador>=5*700) {
         estado=5;
       }
     }
   }
 
-  //condicion ganar
    //Medir si ganaste
       int imagenesDescubiertasCantidad;
       imagenesDescubiertasCantidad = 0;
@@ -120,7 +119,7 @@ void draw() {
           imagenesDescubiertasCantidad++;
         }
         if (imagenesDescubiertasCantidad == 12) {
-          if (contador<=6*700) {
+          if (contador<=5*700) {
             estado =4;
           }
         }
