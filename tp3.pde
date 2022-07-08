@@ -1,4 +1,5 @@
-
+//https://youtu.be/p7iagHJcO2Q
+//MARTINA GAMON 91538/3 Y DOLORES PANLLI 91371/7
 int cant, tam, newMemoria;
 PImage []memoria = new PImage[13];
 int []columnas = new int[5];
