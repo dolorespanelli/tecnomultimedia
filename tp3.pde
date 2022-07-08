@@ -4,8 +4,9 @@ int []columnas = new int[5];
 int []filas = new int[5];
 color relleno;
 int estado;
-int contador;
+int contador,imagenesDescubiertasCantidad;
 PFont letrita, creditos;
+boolean []imagenesDescubiertas=new boolean[12];
 boolean []ganar= new boolean[12];
 
 void setup() {
@@ -13,6 +14,7 @@ void setup() {
   cant= 4;
   tam= 800/cant;
   newMemoria=5;
+  imagenesDescubiertasCantidad=0;
   colorMode(RGB);
 
   columnas [0] = 0;
@@ -107,31 +109,23 @@ void draw() {
   }
 
   //condicion ganar
-  /*for (int o= 0; o<=12; o ++) {
-   if (ganar[0] == true) {
-   
-   println("Valor de " + o + " es true");
-   } else {
-   println("Valor de " + o + " es false");
-   
-   estado=4;
-   }
-   }*/
-  if (ganar[0]==true) {
-  } else if (ganar[1]==true) {
-  } else if (ganar[2]==true) {
-  } else if (ganar[3]==true) {
-  } else if (ganar[4]==true) {
-  } else if (ganar[5]==true) {
-  } else if (ganar[6]==true) {
-  } else if (ganar[7]==true) {
-  } else if (ganar[8]==true) {
-  } else if (ganar[9]==true) {
-  } else if (ganar[10]==true) {
-  } else if (ganar[11]==true) {
-  //} else if (contador<=6*700) {
-    estado=4;
-  }
+   //Medir si ganaste
+      int imagenesDescubiertasCantidad;
+      imagenesDescubiertasCantidad = 0;
+      for (int i = 0; i < 12; i ++) {
+        imagenesDescubiertas[i] = false;
+
+        if (ganar[i] == true) {
+          imagenesDescubiertas[i] = true;
+          imagenesDescubiertasCantidad++;
+        }
+        if (imagenesDescubiertasCantidad == 12) {
+          if (contador<=6*700) {
+            estado =4;
+          }
+        }
+      }
+
 
   if (estado==4) {
     background(255, 0, 0);
@@ -168,7 +162,10 @@ void mousePressed() {
   } else if (estado==3) {
     imagenes();
   } else if (estado==3) {
-  } else if (estado==4 || estado==5) {
+   
+      
+    }
+  if (estado==4 || estado==5) {
     estado=6;
   }
 }
