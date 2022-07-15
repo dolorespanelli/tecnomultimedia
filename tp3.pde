@@ -1,4 +1,4 @@
-//link youtube
+//https://youtu.be/7H0LGziMUeI
 //MARTINA GAMON 91538/3 Y DOLORES PANELLI 91371/7
 int cant, tam, newMemoria;
 PImage []memoria = new PImage[13];
