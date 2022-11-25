@@ -55,7 +55,7 @@ class Espacio {
     fill(255);
     texto("SPACEGAME", 120, 320, 100);
     textFont(creditos);
-    texto("Esquiva más de 10 planetas en menos de 60 segundos \n       CUIDADO! Si te chocas más de 3 pierdes :(", 130, 360, 30);
+    texto("Esquiva los planetas en 20 segundos \n       CUIDADO! Si te chocas más de 3 pierdes :(", 130, 360, 30);
     rect(300, 450, 150, 50);
     fill(53, 79, 126);
     text("JUGAR", 335, 485);
